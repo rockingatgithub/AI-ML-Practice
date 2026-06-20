@@ -51,5 +51,5 @@ A Personal Researcher app built with React and Vite. Enter any topic and get a s
 ## Tech Stack
 
 - React 19 + Vite
-- `@google/generative-ai` (Gemini 2.0 Flash)
+- `@google/generative-ai` (Gemini 2.5 Flash, with automatic fallbacks)
 - Structured JSON output via Gemini response schema
