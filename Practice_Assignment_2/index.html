@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Product Card Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <p class="eyebrow">For startup founders</p>
+        <h1>AI Product Card Generator</h1>
+        <p class="subtitle">
+          Enter a product idea and let Gemini craft marketing-ready name, tagline, and description.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="panel input-panel">
+          <label class="field-label" for="product-idea">Product idea</label>
+          <input
+            id="product-idea"
+            type="text"
+            placeholder="e.g. Smart Water Bottle, AI Study Assistant"
+            autocomplete="off"
+          />
+
+          <details class="api-key-details">
+            <summary>API settings</summary>
+            <label class="field-label" for="api-key">Gemini API key</label>
+            <input
+              id="api-key"
+              type="password"
+              placeholder="Paste your key from aistudio.google.com/apikey"
+              autocomplete="off"
+            />
+            <p class="hint">
+              Your key stays in the browser (localStorage). Get one free at
+              <a href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer"
+                >Google AI Studio</a
+              >.
+            </p>
+          </details>
+
+          <button id="generate-btn" type="button">Generate Product Card</button>
+          <p id="status" class="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel card-panel">
+          <div id="placeholder" class="placeholder">
+            <div class="placeholder-icon">✨</div>
+            <p>Your product card will appear here</p>
+          </div>
+
+          <article id="product-card" class="product-card hidden" aria-live="polite">
+            <div class="card-accent"></div>
+            <div class="card-body">
+              <span id="card-emoji" class="card-emoji" aria-hidden="true"></span>
+              <h2 id="card-name" class="card-name"></h2>
+              <p id="card-tagline" class="card-tagline"></p>
+              <p id="card-description" class="card-description"></p>
+              <button id="copy-btn" type="button" class="copy-btn">Copy to clipboard</button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
